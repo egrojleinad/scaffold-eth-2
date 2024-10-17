@@ -20,6 +20,7 @@ const forkingURL = process.env.FORKING_URL || "";
 
 const config: HardhatUserConfig = {
   solidity: {
+    version: "0.8.2",
     compilers: [
       {
         version: "0.8.17",
@@ -33,7 +34,7 @@ const config: HardhatUserConfig = {
       },
     ],
   },
-  defaultNetwork: "localhost",
+  defaultNetwork: "sepolia",
   namedAccounts: {
     deployer: {
       // By default, it will take the first Hardhat account as the deployer
