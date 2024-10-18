@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { useCallback, useEffect, useState } from "react";
+=======
+import { useEffect, useState } from "react";
+>>>>>>> 62c4dc973d554332264adc6cefc7f0ae48167288
 import { blo } from "blo";
 import { useDebounceValue } from "usehooks-ts";
 import { Address, isAddress } from "viem";
@@ -48,7 +52,11 @@ export const AddressInput = ({ value, name, placeholder, onChange, disabled }: C
     },
   });
 
+<<<<<<< HEAD
   const { data: ensAvatar, isLoading: isEnsAvtarLoading } = useEnsAvatar({
+=======
+  const { data: ensAvatar, isLoading: isEnsAvatarLoading } = useEnsAvatar({
+>>>>>>> 62c4dc973d554332264adc6cefc7f0ae48167288
     name: ensName ? normalize(ensName) : undefined,
     chainId: 1,
     query: {
@@ -66,6 +74,7 @@ export const AddressInput = ({ value, name, placeholder, onChange, disabled }: C
     onChange(ensAddress);
   }, [ensAddress, onChange, debouncedValue]);
 
+<<<<<<< HEAD
   const handleChange = useCallback(
     (newValue: Address) => {
       setEnteredEnsName(undefined);
@@ -73,6 +82,11 @@ export const AddressInput = ({ value, name, placeholder, onChange, disabled }: C
     },
     [onChange],
   );
+=======
+  useEffect(() => {
+    setEnteredEnsName(undefined);
+  }, [value]);
+>>>>>>> 62c4dc973d554332264adc6cefc7f0ae48167288
 
   const reFocus =
     isEnsAddressError ||
@@ -88,13 +102,21 @@ export const AddressInput = ({ value, name, placeholder, onChange, disabled }: C
       placeholder={placeholder}
       error={ensAddress === null}
       value={value as Address}
+<<<<<<< HEAD
       onChange={handleChange}
+=======
+      onChange={onChange}
+>>>>>>> 62c4dc973d554332264adc6cefc7f0ae48167288
       disabled={isEnsAddressLoading || isEnsNameLoading || disabled}
       reFocus={reFocus}
       prefix={
         ensName ? (
           <div className="flex bg-base-300 rounded-l-full items-center">
+<<<<<<< HEAD
             {isEnsAvtarLoading && <div className="skeleton bg-base-200 w-[35px] h-[35px] rounded-full shrink-0"></div>}
+=======
+            {isEnsAvatarLoading && <div className="skeleton bg-base-200 w-[35px] h-[35px] rounded-full shrink-0"></div>}
+>>>>>>> 62c4dc973d554332264adc6cefc7f0ae48167288
             {ensAvatar ? (
               <span className="w-[35px]">
                 {

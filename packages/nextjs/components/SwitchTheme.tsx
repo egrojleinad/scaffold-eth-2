@@ -29,11 +29,18 @@ export const SwitchTheme = ({ className }: { className?: string }) => {
       <input
         id="theme-toggle"
         type="checkbox"
+<<<<<<< HEAD
         className="toggle toggle-secondary bg-secondary hover:bg-secondary border-secondary"
         onChange={handleToggle}
         checked={isDarkMode}
       />
 
+=======
+        className="toggle toggle-primary bg-primary hover:bg-primary border-primary"
+        onChange={handleToggle}
+        checked={isDarkMode}
+      />
+>>>>>>> 62c4dc973d554332264adc6cefc7f0ae48167288
       <label htmlFor="theme-toggle" className={`swap swap-rotate ${!isDarkMode ? "swap-active" : ""}`}>
         <SunIcon className="swap-on h-5 w-5" />
         <MoonIcon className="swap-off h-5 w-5" />

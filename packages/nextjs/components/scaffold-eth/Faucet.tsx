@@ -55,7 +55,11 @@ export const Faucet = () => {
   }, []);
 
   const sendETH = async () => {
+<<<<<<< HEAD
     if (!faucetAddress) {
+=======
+    if (!faucetAddress || !inputAddress) {
+>>>>>>> 62c4dc973d554332264adc6cefc7f0ae48167288
       return;
     }
     try {
@@ -64,7 +68,10 @@ export const Faucet = () => {
         to: inputAddress,
         value: parseEther(sendValue as `${number}`),
         account: faucetAddress,
+<<<<<<< HEAD
         chain: hardhat,
+=======
+>>>>>>> 62c4dc973d554332264adc6cefc7f0ae48167288
       });
       setLoading(false);
       setInputAddress(undefined);
@@ -99,7 +106,11 @@ export const Faucet = () => {
             <div className="flex space-x-4">
               <div>
                 <span className="text-sm font-bold">From:</span>
+<<<<<<< HEAD
                 <Address address={faucetAddress} />
+=======
+                <Address address={faucetAddress} onlyEnsOrAddress />
+>>>>>>> 62c4dc973d554332264adc6cefc7f0ae48167288
               </div>
               <div>
                 <span className="text-sm font-bold pl-3">Available:</span>
@@ -110,7 +121,11 @@ export const Faucet = () => {
               <AddressInput
                 placeholder="Destination Address"
                 value={inputAddress ?? ""}
+<<<<<<< HEAD
                 onChange={value => setInputAddress(value)}
+=======
+                onChange={value => setInputAddress(value as AddressType)}
+>>>>>>> 62c4dc973d554332264adc6cefc7f0ae48167288
               />
               <EtherInput placeholder="Amount to send" value={sendValue} onChange={value => setSendValue(value)} />
               <button className="h-10 btn btn-primary btn-sm px-2 rounded-full" onClick={sendETH} disabled={loading}>

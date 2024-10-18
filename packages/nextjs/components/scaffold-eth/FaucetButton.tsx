@@ -30,10 +30,17 @@ export const FaucetButton = () => {
   const faucetTxn = useTransactor(localWalletClient);
 
   const sendETH = async () => {
+<<<<<<< HEAD
     try {
       setLoading(true);
       await faucetTxn({
         chain: hardhat,
+=======
+    if (!address) return;
+    try {
+      setLoading(true);
+      await faucetTxn({
+>>>>>>> 62c4dc973d554332264adc6cefc7f0ae48167288
         account: FAUCET_ADDRESS,
         to: address,
         value: parseEther(NUM_OF_ETH),
@@ -61,11 +68,15 @@ export const FaucetButton = () => {
       }
       data-tip="Grab funds from faucet"
     >
+<<<<<<< HEAD
       <button
         className="btn btn-secondary dark:hover:bg-black/20 focus:bg-secondary hover:shadow-lg btn-sm px-2 rounded-full"
         onClick={sendETH}
         disabled={loading}
       >
+=======
+      <button className="btn btn-secondary btn-sm px-2 rounded-full" onClick={sendETH} disabled={loading}>
+>>>>>>> 62c4dc973d554332264adc6cefc7f0ae48167288
         {!loading ? (
           <BanknotesIcon className="h-4 w-4" />
         ) : (

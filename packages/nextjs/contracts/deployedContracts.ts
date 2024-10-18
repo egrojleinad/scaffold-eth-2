@@ -4,6 +4,7 @@
  */
 import { GenericContractsDeclaration } from "~~/utils/scaffold-eth/contract";
 
+<<<<<<< HEAD
 const deployedContracts = {
   31337: {
     YourCollectible: {
@@ -1112,5 +1113,8 @@ const deployedContracts = {
     },
   },
 } as const;
+=======
+const deployedContracts = {} as const;
+>>>>>>> 62c4dc973d554332264adc6cefc7f0ae48167288
 
 export default deployedContracts satisfies GenericContractsDeclaration;

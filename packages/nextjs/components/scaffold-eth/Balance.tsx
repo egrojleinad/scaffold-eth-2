@@ -1,7 +1,12 @@
 "use client";
 
+<<<<<<< HEAD
 import { useState } from "react";
 import { Address, formatEther } from "viem";
+=======
+import { Address, formatEther } from "viem";
+import { useDisplayUsdMode } from "~~/hooks/scaffold-eth/useDisplayUsdMode";
+>>>>>>> 62c4dc973d554332264adc6cefc7f0ae48167288
 import { useTargetNetwork } from "~~/hooks/scaffold-eth/useTargetNetwork";
 import { useWatchBalance } from "~~/hooks/scaffold-eth/useWatchBalance";
 import { useGlobalState } from "~~/services/store/store";
@@ -17,7 +22,13 @@ type BalanceProps = {
  */
 export const Balance = ({ address, className = "", usdMode }: BalanceProps) => {
   const { targetNetwork } = useTargetNetwork();
+<<<<<<< HEAD
   const price = useGlobalState(state => state.nativeCurrencyPrice);
+=======
+  const nativeCurrencyPrice = useGlobalState(state => state.nativeCurrency.price);
+  const isNativeCurrencyPriceFetching = useGlobalState(state => state.nativeCurrency.isFetching);
+
+>>>>>>> 62c4dc973d554332264adc6cefc7f0ae48167288
   const {
     data: balance,
     isError,
@@ -26,6 +37,7 @@ export const Balance = ({ address, className = "", usdMode }: BalanceProps) => {
     address,
   });
 
+<<<<<<< HEAD
   const [displayUsdMode, setDisplayUsdMode] = useState(price > 0 ? Boolean(usdMode) : false);
 
   const toggleBalanceMode = () => {
@@ -35,6 +47,11 @@ export const Balance = ({ address, className = "", usdMode }: BalanceProps) => {
   };
 
   if (!address || isLoading || balance === null) {
+=======
+  const { displayUsdMode, toggleDisplayUsdMode } = useDisplayUsdMode({ defaultUsdMode: usdMode });
+
+  if (!address || isLoading || balance === null || (isNativeCurrencyPriceFetching && nativeCurrencyPrice === 0)) {
+>>>>>>> 62c4dc973d554332264adc6cefc7f0ae48167288
     return (
       <div className="animate-pulse flex space-x-4">
         <div className="rounded-md bg-slate-300 h-6 w-6"></div>
@@ -58,13 +75,21 @@ export const Balance = ({ address, className = "", usdMode }: BalanceProps) => {
   return (
     <button
       className={`btn btn-sm btn-ghost flex flex-col font-normal items-center hover:bg-transparent ${className}`}
+<<<<<<< HEAD
       onClick={toggleBalanceMode}
+=======
+      onClick={toggleDisplayUsdMode}
+>>>>>>> 62c4dc973d554332264adc6cefc7f0ae48167288
     >
       <div className="w-full flex items-center justify-center">
         {displayUsdMode ? (
           <>
             <span className="text-[0.8em] font-bold mr-1">$</span>
+<<<<<<< HEAD
             <span>{(formattedBalance * price).toFixed(2)}</span>
+=======
+            <span>{(formattedBalance * nativeCurrencyPrice).toFixed(2)}</span>
+>>>>>>> 62c4dc973d554332264adc6cefc7f0ae48167288
           </>
         ) : (
           <>

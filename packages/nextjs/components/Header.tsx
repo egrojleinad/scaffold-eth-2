@@ -4,6 +4,7 @@ import React, { useCallback, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+<<<<<<< HEAD
 import {
   ArrowDownTrayIcon,
   ArrowPathIcon,
@@ -12,6 +13,9 @@ import {
   BugAntIcon,
   PhotoIcon,
 } from "@heroicons/react/24/outline";
+=======
+import { Bars3Icon, BugAntIcon } from "@heroicons/react/24/outline";
+>>>>>>> 62c4dc973d554332264adc6cefc7f0ae48167288
 import { FaucetButton, RainbowKitCustomConnectButton } from "~~/components/scaffold-eth";
 import { useOutsideClick } from "~~/hooks/scaffold-eth";
 
@@ -23,6 +27,7 @@ type HeaderMenuLink = {
 
 export const menuLinks: HeaderMenuLink[] = [
   {
+<<<<<<< HEAD
     label: "My NFTs",
     href: "/myNFTs",
     icon: <PhotoIcon className="h-4 w-4" />,
@@ -41,6 +46,10 @@ export const menuLinks: HeaderMenuLink[] = [
     label: "IPFS Download",
     href: "/ipfsDownload",
     icon: <ArrowDownTrayIcon className="h-4 w-4" />,
+=======
+    label: "Home",
+    href: "/",
+>>>>>>> 62c4dc973d554332264adc6cefc7f0ae48167288
   },
   {
     label: "Debug Contracts",
@@ -87,9 +96,15 @@ export const Header = () => {
   );
 
   return (
+<<<<<<< HEAD
     <div className="sticky xl:static top-0 navbar bg-primary min-h-0 flex-shrink-0 justify-between z-20 shadow-md shadow-secondary px-0 sm:px-2">
       <div className="navbar-start w-auto xl:w-1/2">
         <div className="xl:hidden dropdown" ref={burgerMenuRef}>
+=======
+    <div className="sticky lg:static top-0 navbar bg-base-100 min-h-0 flex-shrink-0 justify-between z-20 shadow-md shadow-secondary px-0 sm:px-2">
+      <div className="navbar-start w-auto lg:w-1/2">
+        <div className="lg:hidden dropdown" ref={burgerMenuRef}>
+>>>>>>> 62c4dc973d554332264adc6cefc7f0ae48167288
           <label
             tabIndex={0}
             className={`ml-1 btn btn-ghost ${isDrawerOpen ? "hover:bg-secondary" : "hover:bg-transparent"}`}
@@ -111,16 +126,28 @@ export const Header = () => {
             </ul>
           )}
         </div>
+<<<<<<< HEAD
         <Link href="/" passHref className="hidden xl:flex items-center gap-1 ml-4 mr-6 shrink-0">
+=======
+        <Link href="/" passHref className="hidden lg:flex items-center gap-2 ml-4 mr-6 shrink-0">
+>>>>>>> 62c4dc973d554332264adc6cefc7f0ae48167288
           <div className="flex relative w-10 h-10">
             <Image alt="SE2 logo" className="cursor-pointer" fill src="/logo.svg" />
           </div>
           <div className="flex flex-col">
+<<<<<<< HEAD
             <span className="font-bold leading-tight">SRE Challenges</span>
             <span className="text-xs">#0: Simple NFT</span>
           </div>
         </Link>
         <ul className="hidden xl:flex xl:flex-nowrap menu menu-horizontal px-1 gap-2">
+=======
+            <span className="font-bold leading-tight">Scaffold-ETH</span>
+            <span className="text-xs">Ethereum dev stack</span>
+          </div>
+        </Link>
+        <ul className="hidden lg:flex lg:flex-nowrap menu menu-horizontal px-1 gap-2">
+>>>>>>> 62c4dc973d554332264adc6cefc7f0ae48167288
           <HeaderMenuLinks />
         </ul>
       </div>
